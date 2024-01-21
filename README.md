@@ -66,7 +66,7 @@ Thư viện sử dụng:
 ## 2.1 Kiến trúc hệ thống
 `FRONT-END:`
 <p align="center">
-  <img width="600" src="https://i.imgur.com/XQMUigk.png" alt="Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano">
+  <img width="400" src="https://i.imgur.com/XQMUigk.png" alt="Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano">
 </p>
 <p align="center">
   <em>Figure 1: Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano</em>
