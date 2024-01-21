@@ -66,7 +66,7 @@ Thư viện sử dụng:
 ## 2.1 Kiến trúc hệ thống
 `FRONT-END:`
 <p align="center">
-  <img width="400" src="https://i.imgur.com/XQMUigk.png" alt="Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano">
+  <img width="450" src="https://i.imgur.com/XQMUigk.png" alt="Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano">
 </p>
 <p align="center">
   <em>Figure 1: Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano</em>
@@ -134,7 +134,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 
 -	Nodes: một node là một máy ảo hoặc máy vật lý chạy Kubernetes.
 <p align="center">
-  <img width="400" src="https://i.imgur.com/oWSZuFh.png" alt="Kubernetes Nodes">
+  <img width="300" src="https://i.imgur.com/oWSZuFh.png" alt="Kubernetes Nodes">
 </p>
 <p align="center">
   <em>Figure 6: Kubernetes Nodes</em>
@@ -144,10 +144,10 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 -	Deployment: dùng để phân phối các Pods cho các Nodes cụ thể, mang tính dự phòng.
 -	Replica Set: đảm nhận vai trò tạo ra số lượng Pods giống như dựa vào yêu cầu và luôn duy trì số lượng đó.
 <p align="center">
-  <img width="300" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
+  <img width="350" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
 </p>
 <p align="center">
-  <em>Figure 6: Replica Set</em>
+  <em>Figure 7: Replica Set</em>
 </p>
 
 
