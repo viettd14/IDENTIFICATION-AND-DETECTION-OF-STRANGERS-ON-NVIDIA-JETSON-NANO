@@ -252,10 +252,12 @@ Tuy nhiên, việc phụ thuộc nhiều vào tập dữ liệu train (càng nhi
 | Test case | Training | Conditions | With full light | Without full light |
 |:---------:|:--------:|:----------:|:---------------:|:------------------:|
 | 30 image/ person | 03.353950 (seconds) | Normal | 72% | - |
-|  |  | Normal | - | - |
-|  |  | Image in mobile | 50% | - |
+|             |           |            |                 |                    |
+|             |           | Image in mobile | 50% | - |
+|             |           |            |                 |                    |
 | 30 image/ person | 03.353950 (seconds) | Normal | 86% | 70% |
-|  |  | Normal | 75% | - |
-|  |  | Image in mobile | 60% | 50% |
+|             |           |            |                 |                    |
+|             |           | Image in mobile | 60% | 50% |
+
 
 <p align="justify"></p> 
