@@ -229,6 +229,7 @@ Tiết quả train 6 gương mặt các thành viên trong nhóm với tập dat
 <p align="center">
   <img width="500" src="https://i.imgur.com/leOsrow.png"
 </p>
+	
 - Với việc hình gương mặt đã được scale lại cũng như loại bỏ màu sắc để chuyển về dạng xám, tốc độ training cho các tập dữ liệu mẫu trên thiết bị Jetson Nano đạt được lần lượt là 3,35 giây cho 180 hình và 15,6 giây cho 3000 với thuận toán nhận diện Haar Cascade.
 
 Tiến hành đánh giá độ chính xác của hệ thống thông qua việc nhận diện được các thành viên trong nhóm:
@@ -238,9 +239,23 @@ Tiến hành đánh giá độ chính xác của hệ thống thông qua việc 
 - Trong điều kiện đeo khẩu trang và lộ hơn một nửa khuôn mặt, kết quả nhận diện đo được ở mức trên 70%. Nếu đeo khẩu trang che quá nửa khuôn mặt, hệ thống sẽ không nhận diện được.
 
 Thực hiện đánh giá các thông số của phần cứng Jetson Nano trong quá trình nhận diện khuôn mặt với kết quả đo như sau:
+<p align="center">
+  <img width="500" src="https://i.imgur.com/ZLBdA6A.png"
+</p>
 - Khi hệ thống Jetson Nano khởi động camera và thực hiện việc nhận diện khuôn mặt thông qua hình ảnh truyền trực tiếp, lượng tài nguyên CPU của thiết bị được sử dụng đo được ở mức trên 70% của các core và chiếm khoảng 2,4 GB RAM.
-  
 Thực hiện kiểm tra khả năng phát hiện và nhận diện người lạ, đồng thời truyền tải tín hiệu về cho server để cập nhật liên tục và hiển thị kịp thời cho người sử dụng.
+	
+ ## 4.3. Kết quả
+Thuật toán Haar Cascade cho kết quả rất nhanh khi phân tích thời gian thực, độ chính xác khi nhận diện ở mức tốt, thời gian training dữ liệu ở khá nhanh là những tiêu chí phù hợp với các thiết bị nhúng như Jetson Nano. 
+Tuy nhiên, việc phụ thuộc nhiều vào tập dữ liệu train (càng nhiều dữ liệu thì chi tiết càng cao) cũng như là việc chỉ nhận diện được toàn bộ khuôn mặt ở góc chính diện cũng như là phụ thuộc vào điều kiện ánh sáng môi trường xung quanh là những điểm hạn chế khi cài đặt thuật toán Haar Cascade lên Jetson Nano.
 
+| Test case | Training | Conditions | With full light | Without full light |
+|:---------:|:--------:|:----------:|:---------------:|:------------------:|
+| 30 image/ person | 03.353950 (seconds) | Normal | 72% | - |
+|  |  | Normal | - | - |
+|  |  | Image in mobile | 50% | - |
+| 30 image/ person | 03.353950 (seconds) | Normal | 86% | 70% |
+|  |  | Normal | 75% | - |
+|  |  | Image in mobile | 60% | 50% |
 
 <p align="justify"></p> 
