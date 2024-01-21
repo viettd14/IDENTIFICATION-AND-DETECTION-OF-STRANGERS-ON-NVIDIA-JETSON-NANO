@@ -25,7 +25,7 @@ Nghiên cứu tích hợp thuật toán nhận diện và phát hiện người 
 -	Thuật toán nhận diện người lạ trên thiết bị nhúng
 -	Hiện thực thuật toán nhận diện người lạ trên NVIDIA Jetson Nano
 -	Thực nghiệm và đánh giá kết quả
--	
+  
 #### c.	Phương pháp thực hiện
 `Thiết bị phần cứng:`
 -	NVIDIA Jetson Nano
@@ -53,6 +53,25 @@ Công cụ hỗ trợ lập trình:
 Thư viện sử dụng:
 -	OpenCV (Open Computer Vision)
 -	Haar Cascade
+
+## 1.2.	Ý nghĩa bài toán
+<p align="justify"> Phát hiện và nhận diện khuôn mặt người cũng là một chủ đề rất quan trọng đối với các hoạt động theo dõi và bảo mật. Mặc dù các công cụ và thuật toán được sử dụng trong thư viện này không mạnh mẽ và an toàn như các hệ thống thương mại, nhưng nó có rất nhiều tiềm năng để thay thế với một vài chỉnh sửa về thiết kế và triển khai.</p>
+
+## 1.3.	Giới hạn và kết quả mong muốn
+<p align="justify"> Dựa trên tập dữ liệu mẫu về khuôn mặt các thành viên trong nhóm, hệ thống sẽ được training để xác định khuôn mặt người lạ (không phải là thành viên nhóm) khi hình ảnh được chụp từ camera kết nối trực tiếp.</p>
+
+
+
+# II. THIẾT KẾ HỆ THỐNG
+## 2.1 Kiến trúc hệ thống
+`FRONT-END:`
+<p align="center">
+  <img width="600" src="https://i.imgur.com/XQMUigk.png" alt="Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano">
+</p>
+<p align="center">
+  <em>Figure 2: Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano</em>
+</p>
+
 
 
 
