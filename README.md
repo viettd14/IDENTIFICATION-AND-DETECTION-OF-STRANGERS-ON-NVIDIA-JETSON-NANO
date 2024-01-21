@@ -259,5 +259,18 @@ User
 |  |  | With mask | 75% | - |
 |  |  | Image in mobile | 60% | 50% |
 
-
-<p align="justify"></p> 
+# Tài liệu tham khảo
+1. CPU Performance Comparison of OpenCV and other Deep Learning frameworks, Available: https://learnopencv.com/cpu-performance-comparison-of-opencv-and-other-deep-learning-frameworks/   
+2. Brief history of face recognition software, Available:  https://www.facefirst.com/blog/brief-history-of-face-recognition-software/ 
+3. Facial recognition: Top 7 trends (tech, vendors, markets, use cases & latest news), Available: https://www.thalesgroup.com/en/markets/digital-identity-and-security/government/biometrics/facial-recognition  
+4. OpenCV "DNN" with NVIDIA GPUs: 1549% faster YOLO, SSD, and Mask R-CNN, Available: https://www.pyimagesearch.com/2020/02/10/opencv-dnn-with-nvidia-gpus-1549-faster-yolo-ssd-and-mask-r-cnn/ 
+5. Getting Started with Jetson Nano Developer Kit, Available: https://developer.nvidia.com/embedded/learn/get-started-jetson-nano-devkit#intro 
+6. Face recognition with OpenCV, Python, and deep learning, Available: https://www.pyimagesearch.com/2018/06/18/face-recognition-with-opencv-Python-and-deep-learning/
+7. Jetson Community Projects, Available:  https://developer.nvidia.com/embedded/community/jetson-projects
+8. Raspberry Pi Face Recognition-Based Door Lock, Available: https://www.digikey.be/en/maker/projects/raspberry-pi-face-recognition-based-door-lock/a4c71ade7f294a62bd8cd94a803df919 
+9. Install Opencv 4.1 on Nvidia Jetson Nano, Available: https://pysource.com/2019/08/26/install-opencv-4-1-on-nvidia-jetson-nano/ 
+10. How to Install OpenCV 4.5 on NVIDIA Jetson Nano, Available: https://automaticaddison.com/how-to-install-opencv-4-5-on-nvidia-jetson-nano/  
+11. Setting up a High-availability K3s Kubernetes Cluster for Rancher, Available: https://rancher.com/docs/rancher/v2.x/en/installation/resources/k8s-tutorials/ha-with-external-db/  
+12. Installing Helm, Available: https://helm.sh/docs/intro/install/#helm  
+13. Install/Upgrade Rancher on a Kubernetes Cluster, Available: https://rancher.com/docs/rancher/v2.x/en/installation/install-rancher-on-k8s/    
+14. Getting started with the Kubernetes Ingress Controller, Available: https://docs.konghq.com/kubernetes-ingress-controller/1.2.x/guides/getting-started/ 
