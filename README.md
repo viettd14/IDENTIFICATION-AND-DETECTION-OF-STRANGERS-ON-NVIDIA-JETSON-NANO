@@ -69,7 +69,7 @@ Thư viện sử dụng:
   <img width="600" src="https://i.imgur.com/XQMUigk.png" alt="Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano">
 </p>
 <p align="center">
-  <em>Figure 2: Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano</em>
+  <em>Figure 1: Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano</em>
 </p>
 
 `BACK-END:`
@@ -77,7 +77,7 @@ Thư viện sử dụng:
   <img width="600" src="https://i.imgur.com/xs9WoEH.png" alt="Sơ đồ kiến trúc hệ thống back-end">
 </p>
 <p align="center">
-  <em>Figure 2: Sơ đồ kiến trúc hệ thống back-endo</em>
+  <em>Figure 2: Sơ đồ kiến trúc hệ thống back-end</em>
 </p>
 
 Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt cho hệ thống:
@@ -95,18 +95,60 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 ### 2.2.1.	Web Application
 -	Được build dưới dạng Image thông qua cấu hình được đọc từ Dockerfile và upload lên Docker Hub.
 -	Web Application cũng là nơi cung cấp giao diện để tương tác với người dùng.
+-	
 ### 2.2.2.	Database
 -	Database được cài đặt trực tiếp lên máy chủ với đầy đủ phân quyền và bảo mật đối với mỗi đối tượng.
 -	Database cho service: MongoDB.
 -	Database cho file/object: MinIO.
-###	Docker
+###	2.2.3. Docker
 -	Cung cấp những công cụ và service để đóng gói và chạy chương trình của mình trên các môi trường khác nhau một cách nhanh nhất.
+-	Image: là file ảnh, file nền của một hệ điều hành, một nền tảng, một ngôn ngữ (ví dụ: Ubuntu Image, Ruby Image, Rails Image, MySQL Image, …). Các Image này sẽ dùng để tạo ra các Container.
+-	Container: là một máy ảo, được cấu thành từ 1 Image và 1 lớp decoration writable-file-layer. Các thay đổi trong máy ảo (cài thêm phần mềm, tạo thêm file, …) sẽ được lưu ở lớp decoration này.
+-	Các Container này sẽ dùng chung tài nguyên của hệ thống (RAM, Disk, Network, …), chính nhờ vậy, những Container sẽ rất nhẹ, việc khởi động, tương tác sẽ rất nhanh gọn.
+-	Docker Engine: quản lý việc tạo Image, chạy Container, dùng Image có sẵn hay tải Image chưa có về, kết nối vào Container, thêm/ sửa/ xóa Image và Container,…
+-	Docker Registry: Kho lữu trữ các Image.
+<p align="center">
+  <img width="600" src="https://i.imgur.com/xJQzh2N.png" alt="Mô hình Virtualization">
+</p>
+<p align="center">
+  <em>Figure 3: Mô hình Virtualization</em>
+</p>
 
+### 2.2.4. Kubernetes
+-	Hệ thống Kubernetes được sử dụng trong Hệ thống Cảnh báo người lạ được thiết lập vừa là Master Node vừa là Worker Node với số lượng Replica Set là 1.
+-	Kubenertes: là một mã nguồn mở được dùng để tự động triển khai hệ thống, scaling, quản lý các container. Nó thực sự là một hệ thống mạnh mẽ, được phát triển bởi Google. Google sử dụng Kubernetes để quản lý hàng tỉ Docker Container mà họ đang quản lý.
+<p align="center">
+  <img width="600" src="https://i.imgur.com/cfQ7oiB.png" alt="Kubernetes Architecture">
+</p>
+<p align="center">
+  <em>Figure 4: Kubernetes Architecture</em>
+</p>
 
+-	Kubernetes Cluster: là một tập các máy vật lý hay máy ảo được sử dụng bởi Kubernetes để chạy các ứng dụng. Kubernetes Cluster bao gồm Node (Master) và Node (Worker).
+<p align="center">
+  <img width="600" src="https://i.imgur.com/PsVQJYR.png" alt="Kubernetes Cluster">
+</p>
+<p align="center">
+  <em>Figure 5: Kubernetes Cluster</em>
+</p>
 
+-	Nodes: một node là một máy ảo hoặc máy vật lý chạy Kubernetes.
+<p align="center">
+  <img width="600" src="https://i.imgur.com/oWSZuFh.png" alt="Kubernetes Nodes">
+</p>
+<p align="center">
+  <em>Figure 6: Kubernetes Nodes</em>
+</p>
 
-
-
+-	Pods: Pod là 1 nhóm (1 trở lên) các Container thực hiện một mục đích nào đó, như là chạy Software nào đó. Nhóm này chia sẻ không gian lưu trữ, địa chỉ IP với nhau. Pod được tạo ra hoặc xóa tùy thuộc vào yêu càu của dự án. Đơn vị nhỏ nhất của ứng dụng chạy Kubernetes đó là Container, nhưng đơn vị quản lý cơ bản nhất thì là Pods.
+-	Deployment: dùng để phân phối các Pods cho các Nodes cụ thể, mang tính dự phòng.
+-	Replica Set: đảm nhận vai trò tạo ra số lượng Pods giống như dựa vào yêu cầu và luôn duy trì số lượng đó.
+<p align="center">
+  <img width="600" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
+</p>
+<p align="center">
+  <em>Figure 6: Replica Set</em>
+</p>
 
 
 
@@ -119,3 +161,5 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 # II. CÁC THÀNH PHẦN CỦA HỆ THỐNG
 # III.	TÍNH NĂNG HIGH AVAILABILITY, SCALABILITY, RELIABILITY CHO HỆ THỐNG
 # IV.	TRIỂN KHAI HỆ THỐNG
+
+<p align="justify"></p> 
