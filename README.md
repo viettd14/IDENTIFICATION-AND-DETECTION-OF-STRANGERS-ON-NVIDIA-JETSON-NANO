@@ -127,14 +127,78 @@ Giao diện phần cứng bao gồm các bước sau:
   <img width="450" src="https://i.imgur.com/SoNGHnD.png" alt="jetson nano system hardware">
 </p>
 <p align="center">
-  <em>Figure 3: Jetson Nano system hardwarei</em>
+  <em>Figure 3: Jetson Nano system hardware</em>
 </p>
 
 
-
 ## 2.4. Thiết lập phần mềm
+### 2.4.1. FRONT-END
+<p align="center">
+  <img width="500" src="https://i.imgur.com/EiujrP8.png" alt="Kiến trúc lớp cho dự án nhận diện người lạ trong ứng dụng SmartHome">
+</p>
+<p align="center">
+  <em>Figure 4: Kiến trúc lớp cho dự án nhận diện người lạ trong ứng dụng SmartHome</em>
+</p>
 
+Để định cấu hình Nvidia Jetson Nano với hệ điều hành Ubuntu và cài đặt các gói thư viện thích hợp, các thư viện quan trọng nhất được sử dụng trong dự án là:
+- `dlib:` Một thư viện deep learning được viết bằng C ++ với các ràng buộc cho Python.
+- `face_recognition:` Một gói Python với phần mềm phụ trợ dlib chạy thư viện nhận diện khuôn mặt hiện đại của dlib.
+- `Gstreamer:`một gói trong Python cho phép tương tác với cái camera cũng như xử lý tín hiệu âm thanh hình ảnh từ camera trong code Python.
+- `Pi.GPIO:` Thư viện để điều khiển đầu ra chân GPIO của Nvidia Jetson Nano.
+- `PyQt5:` Liên kết Python cho thư viện Qt C ++ để phát triển giao diện người dùng và công cụ hiển thị.
+- `OpenCV:` là một thư viện mã nguồn mở hàng đầu cho thị giác máy tính (computer vision), xử lý ảnh và deep learning, và các tính năng tăng tốc GPU trong hoạt động thời gian thực, bao gồm các interface C++, C, Python, Java và hỗ trợ Windows, Linux, Mac OS, iOS và Android. OpenCV được thiết kế để tính toán hiệu quả và với sự tập trung nhiều vào các ứng dụng thời gian thực.
+- `Requests:` thư viện hỗ trợ việc gọi và xử lý cái api thông qua network trong Python.
 
+### 2.2.4. BACK-END
+<p align="center">
+  <img width="500" src="https://i.imgur.com/wBMRzwF.png" alt="Mô hình tổng quan (Low Level Design) hệ thống back-end">
+</p>
+<p align="center">
+  <em>Figure 5: Mô hình tổng quan (Low Level Design) hệ thống back-end</em>
+</p>
+
+Hệ thống máy chủ gồm 2 máy chủ ảo hóa:
+- Server 1:
+  - 4 CPU – 4 GB RAM – 80 GB Disk
+  - 1 IP Public: 171.244.38.5
+- Server 2:
+  - 4 CPU – 4 GB RAM – 80 GB Disk
+  - 1 IP Public: 171.244.38.7
+- Các kết nối:
+  - Mỗi máy chủ ảo hóa đều được cấp 1 IP Public và mở các Port cho các Service giao tiếp ra bên ngoài đồng thời giao tiếp nội bộ giữa các máy chủ.
+  - Cluster sẽ được Load Balance thông qua phần mềm HAProxy & Keepalived.
+
+<p align="center">
+  <img width="500" src="https://i.imgur.com/0oZINPO.png" alt="Mô hình triển khai (High Level Design) hệ thống back-end">
+</p>
+<p align="center">
+  <em>Figure 6: Mô hình triển khai (High Level Design) hệ thống back-end</em>
+</p>
+
+- Cài đặt triển khai mô hình Rancher/Kubernetes (Master Nodes và Worker Nodes)
+  - Máy chủ Kubernetes vừa đóng vai trò là Master vừa là Worker.
+  - Triển khai các service: Web Application Service và API Service.
+  - Các Worker Nodes có thể giao tiếp trực tiếp với nhau thông qua IP/Hostname hoặc giao tiếp với nhau thông qua RabbitMQ.
+  - Các Worker Nodes được quản lý và điều phối thông qua Master Nodes.
+  - Các Worker Nodes được cấu hình Health Check để đảm bảo tính HA.
+  - Hệ thống giao tiếp với bên ngoài thông qua Load Balancer và Firewall.
+- Database:
+  - Cài đặt MongoDB trực tiếp trên máy chủ với cấu hình Single Node.
+  - Dữ liệu trong Database được lưu trữ trên Host và có cơ chế backup & restore tự động.
+- Các Service:
+  - Web Application Service: sử dụng thư viện Javascript-front-end ReactJS để xây dựng giao diện người dùng.
+  - API Service: sử dụng Framework NodeJS với ngôn ngữ lập trình TypeScript.
+  - Cả 2 Service đều được build thành các Image tương ứng với cấu hình lệnh trong Dockerfile và tiến hành Deploy lên Docker Hub, sau đó hệ thống Kubernetes (K3s) sẽ Pull Image tương ứng với từng cấu hình với đuôi file .YAML và tự động Deploy theo Port đã thiết lập với trạng thái môi trường Production.
+
+- Thiết lập website cảnh báo người lạ:
+Link website: http://my-server:30003/
+
+<p align="center">
+  <img width="500" src="https://i.imgur.com/H9FEWue.png" alt="Giao diện website cảnh báo người lạ">
+</p>
+<p align="center">
+  <em>Figure 6: Giao diện website cảnh báo người lạ</em>
+</p>
 
 
 
