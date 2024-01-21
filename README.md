@@ -2,6 +2,9 @@
   <h1><strong>INTEGRATING ALGORITHMS FOR RECOGNITION AND DETECTION OF STRANGERS ON NVIDIA JETSON NANO</strong></h1>
 </div>
 
+Abstract—NVIDIA Jetson Nano embedded computers are being used in research to integrate face recognition and stranger detection algorithms in Smart Homes.  
+Keywords—NVIDIA Jetson Nano, SmartHome, face recognition, OpenCV with CUDA for Jetson Nano.  
+
 # INTRODUCTION
 <p align="justify"> The face recognition by using smart camera with Smart Home system would bring some benefits such as: face recognition for opening doors, internal light control combining with face recognition, or the security system of Smart Home would notify the stranger in house by comparing with the stored family’s members in the device. Besides, system could store video for easily review and snapshot for investigation. </p>
 
