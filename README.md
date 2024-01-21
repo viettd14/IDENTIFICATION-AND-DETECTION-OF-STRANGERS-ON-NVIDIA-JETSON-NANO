@@ -249,15 +249,15 @@ Thực hiện kiểm tra khả năng phát hiện và nhận diện người l�
 Thuật toán Haar Cascade cho kết quả rất nhanh khi phân tích thời gian thực, độ chính xác khi nhận diện ở mức tốt, thời gian training dữ liệu ở khá nhanh là những tiêu chí phù hợp với các thiết bị nhúng như Jetson Nano. 
 Tuy nhiên, việc phụ thuộc nhiều vào tập dữ liệu train (càng nhiều dữ liệu thì chi tiết càng cao) cũng như là việc chỉ nhận diện được toàn bộ khuôn mặt ở góc chính diện cũng như là phụ thuộc vào điều kiện ánh sáng môi trường xung quanh là những điểm hạn chế khi cài đặt thuật toán Haar Cascade lên Jetson Nano.
 
+User
 | Test case | Training | Conditions | With full light | Without full light |
 |:---------:|:--------:|:----------:|:---------------:|:------------------:|
 | 30 image/ person | 03.353950 (seconds) | Normal | 72% | - |
-|             |           |            |                 |                    |
-|             |           | Image in mobile | 50% | - |
-|             |           |            |                 |                    |
+|  |  | With mask | - | - |
+|  |  | Image in mobile | 50% | - |
 | 30 image/ person | 03.353950 (seconds) | Normal | 86% | 70% |
-|             |           |            |                 |                    |
-|             |           | Image in mobile | 60% | 50% |
+|  |  | With mask | 75% | - |
+|  |  | Image in mobile | 60% | 50% |
 
 
 <p align="justify"></p> 
