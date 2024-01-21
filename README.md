@@ -150,6 +150,22 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
   <em>Figure 7: Replica Set</em>
 </p>
 
+Tổng kết chức năng của Kubernetes:
+-	Quản lý hàng loạt Docker Host.
+-	Container Scheduling.
+-	Rolling Update.
+-	Scaling/Auto Scaling.
+-	Monitor vòng đời và tình trạng sống chết của Container.
+-	Self-Hearing trong trường hợp có lỗi xảy ra (có khả năng phát hiện và tự sửa lỗi).
+-	Service Discovery.
+-	Load Balancing.
+-	Quản lý Data.
+-	Quản lý Worker Node.
+-	Quản lý Logs.
+-	Infrastructure as Code.
+-	Sự liên kết và mở rộng với các hệ thống khác.
+
+
 
 
 
