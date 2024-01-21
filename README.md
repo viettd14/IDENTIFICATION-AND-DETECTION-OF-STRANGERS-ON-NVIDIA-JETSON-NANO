@@ -108,7 +108,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 -	Docker Engine: quản lý việc tạo Image, chạy Container, dùng Image có sẵn hay tải Image chưa có về, kết nối vào Container, thêm/ sửa/ xóa Image và Container,…
 -	Docker Registry: Kho lữu trữ các Image.
 <p align="center">
-  <img width="400" src="https://i.imgur.com/xJQzh2N.png" alt="Mô hình Virtualization">
+  <img width="300" src="https://i.imgur.com/xJQzh2N.png" alt="Mô hình Virtualization">
 </p>
 <p align="center">
   <em>Figure 3: Mô hình Virtualization</em>
@@ -126,7 +126,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 
 -	Kubernetes Cluster: là một tập các máy vật lý hay máy ảo được sử dụng bởi Kubernetes để chạy các ứng dụng. Kubernetes Cluster bao gồm Node (Master) và Node (Worker).
 <p align="center">
-  <img width="400" src="https://i.imgur.com/PsVQJYR.png" alt="Kubernetes Cluster">
+  <img width="300" src="https://i.imgur.com/PsVQJYR.png" alt="Kubernetes Cluster">
 </p>
 <p align="center">
   <em>Figure 5: Kubernetes Cluster</em>
@@ -144,7 +144,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 -	Deployment: dùng để phân phối các Pods cho các Nodes cụ thể, mang tính dự phòng.
 -	Replica Set: đảm nhận vai trò tạo ra số lượng Pods giống như dựa vào yêu cầu và luôn duy trì số lượng đó.
 <p align="center">
-  <img width="400" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
+  <img width="300" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
 </p>
 <p align="center">
   <em>Figure 6: Replica Set</em>
