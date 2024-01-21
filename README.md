@@ -41,14 +41,13 @@ Sử dụng công nghệ:
 -	ReactJS
 -	NodeJS
 -	Material UI
--	Web browser
--	Cơ sở dữ liệu MongoDB
+-	MongoDB
 -	Object Storage MinIO (minio)
 -	RabbitMQ
 
 Công cụ hỗ trợ lập trình:
 -	Visual Studio Code
--	Google Colaboratory (gọi tắt là Google Colab hay Colab)
+-	Google Colaboratory
 
 Thư viện sử dụng:
 -	OpenCV (Open Computer Vision)
@@ -95,11 +94,12 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 ### 2.2.1.	Web Application
 -	Được build dưới dạng Image thông qua cấu hình được đọc từ Dockerfile và upload lên Docker Hub.
 -	Web Application cũng là nơi cung cấp giao diện để tương tác với người dùng.
--	
+	
 ### 2.2.2.	Database
 -	Database được cài đặt trực tiếp lên máy chủ với đầy đủ phân quyền và bảo mật đối với mỗi đối tượng.
 -	Database cho service: MongoDB.
 -	Database cho file/object: MinIO.
+  
 ###	2.2.3. Docker
 -	Cung cấp những công cụ và service để đóng gói và chạy chương trình của mình trên các môi trường khác nhau một cách nhanh nhất.
 -	Image: là file ảnh, file nền của một hệ điều hành, một nền tảng, một ngôn ngữ (ví dụ: Ubuntu Image, Ruby Image, Rails Image, MySQL Image, …). Các Image này sẽ dùng để tạo ra các Container.
@@ -107,63 +107,27 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 -	Các Container này sẽ dùng chung tài nguyên của hệ thống (RAM, Disk, Network, …), chính nhờ vậy, những Container sẽ rất nhẹ, việc khởi động, tương tác sẽ rất nhanh gọn.
 -	Docker Engine: quản lý việc tạo Image, chạy Container, dùng Image có sẵn hay tải Image chưa có về, kết nối vào Container, thêm/ sửa/ xóa Image và Container,…
 -	Docker Registry: Kho lữu trữ các Image.
-<p align="center">
-  <img width="300" src="https://i.imgur.com/xJQzh2N.png" alt="Mô hình Virtualization">
-</p>
-<p align="center">
-  <em>Figure 3: Mô hình Virtualization</em>
-</p>
 
 ### 2.2.4. Kubernetes
 -	Hệ thống Kubernetes được sử dụng trong Hệ thống Cảnh báo người lạ được thiết lập vừa là Master Node vừa là Worker Node với số lượng Replica Set là 1.
--	Kubenertes: là một mã nguồn mở được dùng để tự động triển khai hệ thống, scaling, quản lý các container. Nó thực sự là một hệ thống mạnh mẽ, được phát triển bởi Google. Google sử dụng Kubernetes để quản lý hàng tỉ Docker Container mà họ đang quản lý.
-<p align="center">
-  <img width="400" src="https://i.imgur.com/cfQ7oiB.png" alt="Kubernetes Architecture">
-</p>
-<p align="center">
-  <em>Figure 4: Kubernetes Architecture</em>
-</p>
-
 -	Kubernetes Cluster: là một tập các máy vật lý hay máy ảo được sử dụng bởi Kubernetes để chạy các ứng dụng. Kubernetes Cluster bao gồm Node (Master) và Node (Worker).
-<p align="center">
-  <img width="300" src="https://i.imgur.com/PsVQJYR.png" alt="Kubernetes Cluster">
-</p>
-<p align="center">
-  <em>Figure 5: Kubernetes Cluster</em>
-</p>
-
 -	Nodes: một node là một máy ảo hoặc máy vật lý chạy Kubernetes.
-<p align="center">
-  <img width="300" src="https://i.imgur.com/oWSZuFh.png" alt="Kubernetes Nodes">
-</p>
-<p align="center">
-  <em>Figure 6: Kubernetes Nodes</em>
-</p>
-
 -	Pods: Pod là 1 nhóm (1 trở lên) các Container thực hiện một mục đích nào đó, như là chạy Software nào đó. Nhóm này chia sẻ không gian lưu trữ, địa chỉ IP với nhau. Pod được tạo ra hoặc xóa tùy thuộc vào yêu càu của dự án. Đơn vị nhỏ nhất của ứng dụng chạy Kubernetes đó là Container, nhưng đơn vị quản lý cơ bản nhất thì là Pods.
 -	Deployment: dùng để phân phối các Pods cho các Nodes cụ thể, mang tính dự phòng.
 -	Replica Set: đảm nhận vai trò tạo ra số lượng Pods giống như dựa vào yêu cầu và luôn duy trì số lượng đó.
-<p align="center">
-  <img width="350" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
-</p>
-<p align="center">
-  <em>Figure 7: Replica Set</em>
-</p>
 
-Tổng kết chức năng của Kubernetes:
--	Quản lý hàng loạt Docker Host.
+Các chức năng của Kubernetes:
+-	Docker Hosts Management.
 -	Container Scheduling.
 -	Rolling Update.
 -	Scaling/Auto Scaling.
--	Monitor vòng đời và tình trạng sống chết của Container.
--	Self-Hearing trong trường hợp có lỗi xảy ra (có khả năng phát hiện và tự sửa lỗi).
+- Monitor the life cycle and status of Containers.
+-	Self-Hearing.
 -	Service Discovery.
 -	Load Balancing.
--	Quản lý Data.
--	Quản lý Worker Node.
--	Quản lý Logs.
+-	Data Management, Logs Management
+- Worker Node Management.
 -	Infrastructure as Code.
--	Sự liên kết và mở rộng với các hệ thống khác.
 
 
 
