@@ -108,7 +108,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 -	Docker Engine: quản lý việc tạo Image, chạy Container, dùng Image có sẵn hay tải Image chưa có về, kết nối vào Container, thêm/ sửa/ xóa Image và Container,…
 -	Docker Registry: Kho lữu trữ các Image.
 <p align="center">
-  <img width="600" src="https://i.imgur.com/xJQzh2N.png" alt="Mô hình Virtualization">
+  <img width="400" src="https://i.imgur.com/xJQzh2N.png" alt="Mô hình Virtualization">
 </p>
 <p align="center">
   <em>Figure 3: Mô hình Virtualization</em>
@@ -118,7 +118,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 -	Hệ thống Kubernetes được sử dụng trong Hệ thống Cảnh báo người lạ được thiết lập vừa là Master Node vừa là Worker Node với số lượng Replica Set là 1.
 -	Kubenertes: là một mã nguồn mở được dùng để tự động triển khai hệ thống, scaling, quản lý các container. Nó thực sự là một hệ thống mạnh mẽ, được phát triển bởi Google. Google sử dụng Kubernetes để quản lý hàng tỉ Docker Container mà họ đang quản lý.
 <p align="center">
-  <img width="600" src="https://i.imgur.com/cfQ7oiB.png" alt="Kubernetes Architecture">
+  <img width="400" src="https://i.imgur.com/cfQ7oiB.png" alt="Kubernetes Architecture">
 </p>
 <p align="center">
   <em>Figure 4: Kubernetes Architecture</em>
@@ -126,7 +126,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 
 -	Kubernetes Cluster: là một tập các máy vật lý hay máy ảo được sử dụng bởi Kubernetes để chạy các ứng dụng. Kubernetes Cluster bao gồm Node (Master) và Node (Worker).
 <p align="center">
-  <img width="600" src="https://i.imgur.com/PsVQJYR.png" alt="Kubernetes Cluster">
+  <img width="400" src="https://i.imgur.com/PsVQJYR.png" alt="Kubernetes Cluster">
 </p>
 <p align="center">
   <em>Figure 5: Kubernetes Cluster</em>
@@ -134,7 +134,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 
 -	Nodes: một node là một máy ảo hoặc máy vật lý chạy Kubernetes.
 <p align="center">
-  <img width="600" src="https://i.imgur.com/oWSZuFh.png" alt="Kubernetes Nodes">
+  <img width="400" src="https://i.imgur.com/oWSZuFh.png" alt="Kubernetes Nodes">
 </p>
 <p align="center">
   <em>Figure 6: Kubernetes Nodes</em>
@@ -144,7 +144,7 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
 -	Deployment: dùng để phân phối các Pods cho các Nodes cụ thể, mang tính dự phòng.
 -	Replica Set: đảm nhận vai trò tạo ra số lượng Pods giống như dựa vào yêu cầu và luôn duy trì số lượng đó.
 <p align="center">
-  <img width="600" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
+  <img width="400" src="https://i.imgur.com/Lh5rGbD.png" alt="Kubernetes NodesReplica Set">
 </p>
 <p align="center">
   <em>Figure 6: Replica Set</em>
