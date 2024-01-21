@@ -91,6 +91,17 @@ Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt ch
   - Lớp dữ liệu: nơi đây cung cấp các chức năng để quản trị và khai thác dữ liệu. Các dữ liệu chính bao gồm: NoSQL (MongoDB), Object Storage (MinIO).
   -	Lớp cơ sở hạ tầng: hạ tầng ảo hóa phục vụ hệ thống.
 
+## 2.2.	Các thành phần của hệ thống
+### 2.2.1.	Web Application
+-	Được build dưới dạng Image thông qua cấu hình được đọc từ Dockerfile và upload lên Docker Hub.
+-	Web Application cũng là nơi cung cấp giao diện để tương tác với người dùng.
+### 2.2.2.	Database
+-	Database được cài đặt trực tiếp lên máy chủ với đầy đủ phân quyền và bảo mật đối với mỗi đối tượng.
+-	Database cho service: MongoDB.
+-	Database cho file/object: MinIO.
+###	Docker
+-	Cung cấp những công cụ và service để đóng gói và chạy chương trình của mình trên các môi trường khác nhau một cách nhanh nhất.
+
 
 
 
