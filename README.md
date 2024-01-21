@@ -72,8 +72,24 @@ Thư viện sử dụng:
   <em>Figure 2: Sơ đồ kiến trúc hệ thống nhận diện người lạ trên Nvidia Jetson Nano</em>
 </p>
 
+`BACK-END:`
+<p align="center">
+  <img width="600" src="https://i.imgur.com/xs9WoEH.png" alt="Sơ đồ kiến trúc hệ thống back-end">
+</p>
+<p align="center">
+  <em>Figure 2: Sơ đồ kiến trúc hệ thống back-endo</em>
+</p>
 
-
+Hệ thống phân thành các tầng xử lý nhằm tăng tính linh hoạt cho hệ thống:
+- Lớp giao tiếp với người dùng hiển thị giao tiếp với người dùng (UI) hoặc giao tiếp với các hệ thống khác (API/SDK). Đây là phần ứng dụng ở phía người dùng cuối. Người dùng sẽ sử dụng những ứng dụng này để truy xuất vào các chức năng của ứng dụng.
+- Lớp xử lý nghiệp vụ:
+  -	API Gateway: cổng giao tiếp từ lớp giao tiếp đến các service bên trong xử lý nghiệp vụ. API Gateway sẽ nhận các yêu cầu từ phía client, chỉnh sửa, xác thực và điều hướng chung đến các API cụ thể trên services phía sau.
+  -	Service Hệ thống nhúng:
+    -	Quản lý thông tin người lạ: Service xử lý các thông tin về người lạ.
+    -	Cảnh báo người lạ: Service xử lý thời gian thực cảnh báo phía client khi nhận được message từ Message Broker.
+    -	RabbitMQ: cung cấp giao thức truyền thông nội bộ giữa các service.
+  - Lớp dữ liệu: nơi đây cung cấp các chức năng để quản trị và khai thác dữ liệu. Các dữ liệu chính bao gồm: NoSQL (MongoDB), Object Storage (MinIO).
+  -	Lớp cơ sở hạ tầng: hạ tầng ảo hóa phục vụ hệ thống.
 
 
 
