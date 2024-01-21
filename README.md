@@ -116,7 +116,9 @@ Các chức năng của Kubernetes:
 <p align="justify"> Bằng việc sử dụng kết hợp 3 thành phần: Docker, Kubernetes và Rancher, toàn bộ các thành phần được triển khai trên nền tảng Cloud Platform với 3 thành phần trên đều được đảm bảo tính High Availability, Scability, Reliability cho các ứng dụng.</p> 
 
 
-## 2.3. Kiến trúc thuật toán nhận diện khuôn mặt
+
+# III. TRIỂN KHAI GIẢI PHÁP
+## 3.1. Kiến trúc thuật toán nhận diện khuôn mặt
 Dưới đây là sơ đồ mô tả luồng hoạt động chính của thuật toán:
  <p align="center">
   <img width="450" src="https://i.imgur.com/Q4VnyHF.png" alt="Sơ đồ luồng hoạt động chính của thuật toán nhận diện">
@@ -126,7 +128,7 @@ Dưới đây là sơ đồ mô tả luồng hoạt động chính của thuật
 </p>
 
 
-## 2.4. Thiết lập phần cứng 
+## 3.2. Triển khai phần cứng 
 Giao diện phần cứng bao gồm các bước sau:
 - Tải và cài đặt file image cho Jetson Nano từ trang chủ của Ndivia
 - Kết nối Mô-đun máy ảnh Raspberry Pi V2 với Nvidia Jetson Nano bằng cáp Raspberry cho camera
@@ -141,8 +143,8 @@ Giao diện phần cứng bao gồm các bước sau:
 </p>
 
 
-## 2.5. Thiết lập phần mềm
-### 2.5.1. FRONT-END
+## 3.2. Triển khai phần mềm
+### 3.2.1. FRONT-END
 <p align="center">
   <img width="500" src="https://i.imgur.com/EiujrP8.png" alt="Kiến trúc lớp cho dự án nhận diện người lạ trong ứng dụng SmartHome">
 </p>
@@ -159,7 +161,7 @@ Giao diện phần cứng bao gồm các bước sau:
 - `OpenCV:` là một thư viện mã nguồn mở hàng đầu cho thị giác máy tính (computer vision), xử lý ảnh và deep learning, và các tính năng tăng tốc GPU trong hoạt động thời gian thực, bao gồm các interface C++, C, Python, Java và hỗ trợ Windows, Linux, Mac OS, iOS và Android. OpenCV được thiết kế để tính toán hiệu quả và với sự tập trung nhiều vào các ứng dụng thời gian thực.
 - `Requests:` thư viện hỗ trợ việc gọi và xử lý cái api thông qua network trong Python.
 
-### 2.5.2. BACK-END
+### 3.2.2. BACK-END
 <p align="center">
   <img width="500" src="https://i.imgur.com/wBMRzwF.png" alt="Mô hình tổng quan (Low Level Design) hệ thống back-end">
 </p>
