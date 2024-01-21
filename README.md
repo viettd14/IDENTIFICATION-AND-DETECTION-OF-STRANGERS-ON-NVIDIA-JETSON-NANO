@@ -35,7 +35,7 @@ Nghiên cứu tích hợp thuật toán nhận diện và phát hiện người 
 -	Monitor + cáp HDMI để hiển thị
 -	Case và quạt tản nhiệt cho Jetson Nano.
 
-`Thư viện, môi trường hỗ trợ lập trình ứng dụng:`
+`Thư viện, môi trường hỗ trợ lập trình ứng dụng:`  
 Sử dụng công nghệ:
 -	Python
 -	ReactJS
