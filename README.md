@@ -117,7 +117,7 @@ Các chức năng của Kubernetes:
 
 
 
-# III. TRIỂN KHAI GIẢI PHÁP
+# III. TRIỂN KHAI HỆ THỐNG
 ## 3.1. Kiến trúc thuật toán nhận diện khuôn mặt
 Dưới đây là sơ đồ mô tả luồng hoạt động chính của thuật toán:
  <p align="center">
@@ -214,7 +214,33 @@ Link website: http://my-server:30003/
 
 
 
+# IV. ĐÁNH GIÁ GIẢI PHÁP
+## 4.1. Mô hình kiểm tra 
+- Kiểm tra độ chính xác của gương mặt các thành viên trong nhóm sau khi đã training cho máy học để có thể nhận diện và phân biệt với người lạ.
+- Hệ thống kiểm tra trực tiếp hình ảnh người lạ thông qua camera hoặc là hình ảnh có trong điện thoai hoặc in ra giấy.
+  
+## 4.2. Mô hình đánh giá
+Tiến hành đo đạc kết quả train 6 gương mặt các thành viên trong nhóm với tập dataset hình ảnh là 180 hình:
+<p align="center">
+  <img width="500" src="https://i.imgur.com/Vbc1ZA3.png"
+</p>
 
-# III.	TRIỂN KHAI HỆ THỐNG
+Tiết quả train 6 gương mặt các thành viên trong nhóm với tập dataset hình ảnh là 3000 hình:
+<p align="center">
+  <img width="500" src="https://i.imgur.com/leOsrow.png"
+</p>
+- Với việc hình gương mặt đã được scale lại cũng như loại bỏ màu sắc để chuyển về dạng xám, tốc độ training cho các tập dữ liệu mẫu trên thiết bị Jetson Nano đạt được lần lượt là 3,35 giây cho 180 hình và 15,6 giây cho 3000 với thuận toán nhận diện Haar Cascade.
+
+Tiến hành đánh giá độ chính xác của hệ thống thông qua việc nhận diện được các thành viên trong nhóm:
+- Trong điều kiện đầy đủ ánh sáng, góc chính diện, kết quả nhận diện đo được khoảng hơn 80% với hình ảnh trực tiếp từ camera và hơn 60% với hình ảnh thông qua các thiết bị di động hoặc in giấy.
+- Trong điều kiện thiếu ánh sáng, góc chính diện, kết quả nhận diện đo được khoảng hơn 70% với hình ảnh trực tiếp từ camera và hơn 50% với hình ảnh thông qua các thiết bị di động hoặc in giấy.
+- Trong điều kiện các góc nghiêng hoặc bị che, kết quả nhận diện đo được khoảng dưới 60% với hình ảnh trực tiếp từ camera và không nhận diện được hình ảnh thông qua các thiết bị di động hoặc in giấy.
+- Trong điều kiện đeo khẩu trang và lộ hơn một nửa khuôn mặt, kết quả nhận diện đo được ở mức trên 70%. Nếu đeo khẩu trang che quá nửa khuôn mặt, hệ thống sẽ không nhận diện được.
+
+Thực hiện đánh giá các thông số của phần cứng Jetson Nano trong quá trình nhận diện khuôn mặt với kết quả đo như sau:
+- Khi hệ thống Jetson Nano khởi động camera và thực hiện việc nhận diện khuôn mặt thông qua hình ảnh truyền trực tiếp, lượng tài nguyên CPU của thiết bị được sử dụng đo được ở mức trên 70% của các core và chiếm khoảng 2,4 GB RAM.
+  
+Thực hiện kiểm tra khả năng phát hiện và nhận diện người lạ, đồng thời truyền tải tín hiệu về cho server để cập nhật liên tục và hiển thị kịp thời cho người sử dụng.
+
 
 <p align="justify"></p> 
