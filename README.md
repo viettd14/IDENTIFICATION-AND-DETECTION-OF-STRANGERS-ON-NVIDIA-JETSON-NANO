@@ -116,7 +116,17 @@ Các chức năng của Kubernetes:
 <p align="justify"> Bằng việc sử dụng kết hợp 3 thành phần: Docker, Kubernetes và Rancher, toàn bộ các thành phần được triển khai trên nền tảng Cloud Platform với 3 thành phần trên đều được đảm bảo tính High Availability, Scability, Reliability cho các ứng dụng.</p> 
 
 
-## 2.3. Thiết lập phần cứng 
+## 2.3. Kiến trúc thuật toán nhận diện khuôn mặt
+Dưới đây là sơ đồ mô tả luồng hoạt động chính của thuật toán:
+ <p align="center">
+  <img width="450" src="https://i.imgur.com/Q4VnyHF.png" alt="Sơ đồ luồng hoạt động chính của thuật toán nhận diện">
+</p>
+<p align="center">
+  <em>Figure 3: Sơ đồ luồng hoạt động chính của thuật toán nhận diện</em>
+</p>
+
+
+## 2.4. Thiết lập phần cứng 
 Giao diện phần cứng bao gồm các bước sau:
 - Tải và cài đặt file image cho Jetson Nano từ trang chủ của Ndivia
 - Kết nối Mô-đun máy ảnh Raspberry Pi V2 với Nvidia Jetson Nano bằng cáp Raspberry cho camera
@@ -127,17 +137,17 @@ Giao diện phần cứng bao gồm các bước sau:
   <img width="450" src="https://i.imgur.com/SoNGHnD.png" alt="jetson nano system hardware">
 </p>
 <p align="center">
-  <em>Figure 3: Jetson Nano system hardware</em>
+  <em>Figure 4: Jetson Nano system hardware</em>
 </p>
 
 
-## 2.4. Thiết lập phần mềm
-### 2.4.1. FRONT-END
+## 2.5. Thiết lập phần mềm
+### 2.5.1. FRONT-END
 <p align="center">
   <img width="500" src="https://i.imgur.com/EiujrP8.png" alt="Kiến trúc lớp cho dự án nhận diện người lạ trong ứng dụng SmartHome">
 </p>
 <p align="center">
-  <em>Figure 4: Kiến trúc lớp cho dự án nhận diện người lạ trong ứng dụng SmartHome</em>
+  <em>Figure 5: Kiến trúc lớp cho dự án nhận diện người lạ trong ứng dụng SmartHome</em>
 </p>
 
 Để định cấu hình Nvidia Jetson Nano với hệ điều hành Ubuntu và cài đặt các gói thư viện thích hợp, các thư viện quan trọng nhất được sử dụng trong dự án là:
@@ -149,12 +159,12 @@ Giao diện phần cứng bao gồm các bước sau:
 - `OpenCV:` là một thư viện mã nguồn mở hàng đầu cho thị giác máy tính (computer vision), xử lý ảnh và deep learning, và các tính năng tăng tốc GPU trong hoạt động thời gian thực, bao gồm các interface C++, C, Python, Java và hỗ trợ Windows, Linux, Mac OS, iOS và Android. OpenCV được thiết kế để tính toán hiệu quả và với sự tập trung nhiều vào các ứng dụng thời gian thực.
 - `Requests:` thư viện hỗ trợ việc gọi và xử lý cái api thông qua network trong Python.
 
-### 2.2.4. BACK-END
+### 2.5.2. BACK-END
 <p align="center">
   <img width="500" src="https://i.imgur.com/wBMRzwF.png" alt="Mô hình tổng quan (Low Level Design) hệ thống back-end">
 </p>
 <p align="center">
-  <em>Figure 5: Mô hình tổng quan (Low Level Design) hệ thống back-end</em>
+  <em>Figure 6: Mô hình tổng quan (Low Level Design) hệ thống back-end</em>
 </p>
 
 Hệ thống máy chủ gồm 2 máy chủ ảo hóa:
@@ -172,7 +182,7 @@ Hệ thống máy chủ gồm 2 máy chủ ảo hóa:
   <img width="500" src="https://i.imgur.com/0oZINPO.png" alt="Mô hình triển khai (High Level Design) hệ thống back-end">
 </p>
 <p align="center">
-  <em>Figure 6: Mô hình triển khai (High Level Design) hệ thống back-end</em>
+  <em>Figure 7: Mô hình triển khai (High Level Design) hệ thống back-end</em>
 </p>
 
 - Cài đặt triển khai mô hình Rancher/Kubernetes (Master Nodes và Worker Nodes)
@@ -197,7 +207,7 @@ Link website: http://my-server:30003/
   <img width="500" src="https://i.imgur.com/H9FEWue.png" alt="Giao diện website cảnh báo người lạ">
 </p>
 <p align="center">
-  <em>Figure 6: Giao diện website cảnh báo người lạ</em>
+  <em>Figure 8: Giao diện website cảnh báo người lạ</em>
 </p>
 
 
