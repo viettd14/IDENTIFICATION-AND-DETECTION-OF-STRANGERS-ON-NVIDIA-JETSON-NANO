@@ -124,7 +124,7 @@ Giao diện phần cứng bao gồm các bước sau:
 - Cấp nguồn cho bo mạch Nvidia Jetson Nano bằng bộ chuyển đổi nguồn AC-DC cung cấp nguồn 5V
 - Kết nối chuột, bàn phím không dây cũng như wifi USB cho Jetson Nano.
 <p align="center">
-  <img width="450" src="]https://i.imgur.com/SoNGHnD.png" alt="jetson nano system hardware">
+  <img width="450" src="https://i.imgur.com/SoNGHnD.png" alt="jetson nano system hardware">
 </p>
 <p align="center">
   <em>Figure 3: Jetson Nano system hardwarei</em>
