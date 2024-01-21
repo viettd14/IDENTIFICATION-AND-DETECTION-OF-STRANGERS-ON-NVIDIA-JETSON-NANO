@@ -10,6 +10,7 @@ NVIDIA Jetson Nano, SmartHome, face recognition, OpenCV with CUDA for Jetson Nan
 
 # I. INTRODUCTION
 <p align="justify"> The face recognition by using smart camera with Smart Home system would bring some benefits such as: face recognition for opening doors, internal light control combining with face recognition, or the security system of Smart Home would notify the stranger in house by comparing with the stored family’s members in the device. Besides, system could store video for easily review and snapshot for investigation. </p>
+
 ## 1.1.	Giới thiệu bài toán
 Hệ thống camera quan sát thông minh nhận diện khuôn mặt phối hợp cùng nhà thông minh Smart Home sẽ mang đến những lợi ích như:
 -	Nhận diện khuôn mặt để mở cửa.
